@@ -1,5 +1,7 @@
-<!-- Wappler include head-page="layouts/main" fontawesome_5="local" bootstrap5="local" is="dmx-app" id="index" appconnect="local" components="{dmxTyped:{},dmxSwiper:{},dmxFormatter:{}}" class="style1" -->
-<dmx-api-action id="pokeapi" data-type="json" dmx-param:limit="9" dmx-param:offset="0" dmx-param:url="pokeapi.data.results[0].url" url="https://pokeapi.co/api/v2/pokemon"></dmx-api-action>
+<!-- Wappler include head-page="layouts/main" fontawesome_5="local" bootstrap5="local" is="dmx-app" id="index" appconnect="local" components="{dmxTyped:{},dmxSwiper:{},dmxFormatter:{},dmxBrowser:{}}" class="style1" -->
+
+<dmx-serverconnect id="sc_list_pokemons" url="/api/pokeapi"></dmx-serverconnect>
+<div is="dmx-browser" id="browser1"></div>
 <header>
     <div class="container">
 
@@ -128,24 +130,24 @@
                     <div class="top-container">
                         <div>
                             <img src="/assets/pokeapi/icon-pokeball.svg" alt="">
-                            <span><strong id="js-count-pokemons" role="heading">{{pokeapi.data.count}}</strong> Pokémons</span>
+                            <span><strong id="js-count-pokemons" role="heading">{{sc_list_pokemons.data.teste}}</strong> Pokémons</span>
                         </div>
                     </div>
-                    <div class="all">
-                        <button class="card-pokemon grass">
+                    <div class="all row">
+                        <div class="card-pokemon grass col" dmx-repeat:rep_dados="sc_list_pokemons.data.rep_pokemons">
                             <div class="image">
-                                <img src="/assets/pokeapi/bulbasaur.svg" alt="">
+                                <img src="/assets/pokeapi/bulbasaur.svg" alt="" dmx-bind:src="artwork" loading="lazy">
                             </div>
                             <div class="info">
                                 <div class="text">
-                                    <span>#001</span>
-                                    <h3>{{pokeapi.data.results[0].name.capitalize()}}</h3>
+                                    <span>{{'#00'+id}}</span>
+                                    <h3>{{name.capitalize()}}</h3>
                                 </div>
                                 <div class="icon">
                                     <img src="/assets/pokeapi/icon-types/grass.svg" alt="">
                                 </div>
                             </div>
-                        </button>
+                        </div>
                     </div>
                     <button class="btn-load-more">Load more Pokémons</button>
                 </div>
