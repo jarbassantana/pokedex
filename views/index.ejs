@@ -1,0 +1,169 @@
+<!-- Wappler include head-page="layouts/main" fontawesome_5="local" bootstrap5="local" is="dmx-app" id="index" appconnect="local" components="{dmxTyped:{},dmxSwiper:{},dmxFormatter:{}}" class="style1" -->
+<dmx-api-action id="pokeapi" data-type="json" dmx-param:limit="9" dmx-param:offset="0" dmx-param:url="pokeapi.data.results[0].url" url="https://pokeapi.co/api/v2/pokemon"></dmx-api-action>
+<header>
+    <div class="container">
+
+        <a href="#"><img src="/assets/pokeapi/logo.svg"></a>
+        <p>Case Study -> Code<strong>Boost</strong></p>
+    </div>
+</header>
+<main>
+    <section class="s-area-slide-hero">
+        <div class="slide-hero">
+            <div class="swiper-wrapper" is="dmx-swiper" id="swiper1" effect="fade" grab-cursor="true" loop="true" speed="1000" pagination="bullets">
+
+                <div class="swiper-slide">
+                    <div class="main-area">
+                        <div class="container">
+                            <div class="text">
+                                <div class="tag">
+                                    <div class="icon">
+                                        <img src="/assets/pokeapi/bag-red.svg">
+                                    </div>
+                                    <span>pokedex</span>
+                                </div>
+                                <h1>Who is that Pokémon?</h1>
+                                <p>The perfect guide for those who want to hunt Pokémons around the world</p>
+
+                                <div class="image">
+                                    <img src="/assets/pokeapi/lighting.svg" class="lights" alt="Luzes" title="Luzes">
+                                    <img src="/assets/pokeapi/pokeball-red.png" alt="Pokeball" title="Pokeball" class="pokeball">
+                                </div>
+                            </div>
+                            <div class="area-explore">
+                                <div class="txt">
+                                    <div class="icon">
+                                        <img src="/assets/pokeapi/arrow-down-white.svg" alt="">
+                                    </div>
+                                    <span>explore</span>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide blue">
+                    <div class="main-area">
+                        <div class="container">
+                            <div class="text">
+                                <div class="tag blue-tag">
+                                    <div class="icon">
+                                        <img src="/assets/pokeapi/bag-red.svg">
+                                    </div>
+                                    <span>pokedex</span>
+                                </div>
+                                <h1>Who is that Pokémon?</h1>
+                                <p>The perfect guide for those who want to hunt Pokémons around the world</p>
+
+                                <div class="image">
+                                    <img src="/assets/pokeapi/lighting.svg" class="lights" alt="Luzes" title="Luzes">
+                                    <img src="/assets/pokeapi/pokeball-blue.png" class="pokeball" alt="Pokeball" title="Pokeball">
+                                </div>
+                            </div>
+                            <div class="area-explore">
+                                <div class="txt">
+                                    <div class="icon">
+                                        <img src="/assets/pokeapi/arrow-down-white.svg" alt="">
+                                    </div>
+                                    <span>explore</span>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="s-all-info-pokemons">
+        <div class="container">
+            <div class="top">
+                <h2>Select your pokemon</h2>
+                <div class="search">
+                    <input id="text1" name="text1" type="text" class="form-control" placeholder="Search name or code">
+                    <button type="button">
+                        <img src="/assets/pokeapi/icon-search.svg">
+                    </button>
+                </div>
+            </div>
+            <div class="area-all">
+                <div class="left-container">
+                    <ul>
+                        <li>
+                            <button class="type-filter active all">
+                                <div class="icon">
+                                    <img src="/assets/pokeapi/icon-all.svg">
+                                </div>
+                                <span>All</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="type-filter ghost">
+                                <div class="icon">
+                                    <img src="/assets/pokeapi/icon-types/ghost.svg">
+                                </div>
+                                <span>Ghost</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="type-filter ground">
+                                <div class="icon">
+                                    <img src="/assets/pokeapi/icon-types/ground.svg">
+                                </div>
+                                <span>Ground</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="type-filter grass">
+                                <div class="icon">
+                                    <img src="/assets/pokeapi/icon-types/grass.svg">
+                                </div>
+                                <span>Grass</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="right-container">
+                    <div class="top-container">
+                        <div>
+                            <img src="/assets/pokeapi/icon-pokeball.svg" alt="">
+                            <span><strong id="js-count-pokemons" role="heading">{{pokeapi.data.count}}</strong> Pokémons</span>
+                        </div>
+                    </div>
+                    <div class="all">
+                        <button class="card-pokemon grass">
+                            <div class="image">
+                                <img src="/assets/pokeapi/bulbasaur.svg" alt="">
+                            </div>
+                            <div class="info">
+                                <div class="text">
+                                    <span>#001</span>
+                                    <h3>{{pokeapi.data.results[0].name.capitalize()}}</h3>
+                                </div>
+                                <div class="icon">
+                                    <img src="/assets/pokeapi/icon-types/grass.svg" alt="">
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                    <button class="btn-load-more">Load more Pokémons</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="text">
+            <h3>Módulo JavaScript</h3>
+            <p>Consumindo e exibindo dados de uma API</p>
+        </div>
+        <a href="#">
+            <img src="/assets/pokeapi/codeboost.svg" alt="">
+        </a>
+    </div>
+</footer>
+<script src="../public/js/main.js"></script>
+<meta name="ac:route" content="/">

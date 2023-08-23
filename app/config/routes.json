@@ -1,0 +1,38 @@
+{
+  "routes": [
+    {
+      "path": "/",
+      "page": "index",
+      "layout": "main",
+      "name": "Início",
+      "exec": "",
+      "data": {
+        "title": "Início"
+      }
+    },
+    {
+      "path": "/components",
+      "page": "components",
+      "layout": "main",
+      "name": "Components",
+      "data": {
+        "title": "Components"
+      }
+    }
+  ],
+  "layouts": {
+    "main": {
+      "meta": [
+        {
+          "type": "text",
+          "name": "title"
+        },
+        {
+          "type": "text",
+          "name": "description"
+        }
+      ],
+      "exec": ""
+    }
+  }
+}

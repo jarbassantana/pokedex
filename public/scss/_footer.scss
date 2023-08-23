@@ -1,0 +1,27 @@
+footer{
+    width: 100%;
+    background-color: var(--blue-primary);
+    padding-top: 67px;
+    padding-bottom: 65px;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .text{
+        
+        h3{
+            color: #fff;
+            font-weight: 700;
+            
+        }
+        p{
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 180%;
+            margin-bottom: 0;
+        }
+    }
+}

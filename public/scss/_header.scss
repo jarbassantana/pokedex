@@ -1,0 +1,25 @@
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 112px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    z-index: 2023;
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        p{
+            color: #FFF;
+            font-size: 13px;
+            font-weight: 400;
+            strong{
+                color: #FFF;
+                font-size: 13px;
+                font-weight: 700;
+            }
+        }
+    }
+}
