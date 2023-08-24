@@ -62,6 +62,10 @@
                 },
                 {
                   "type": "text",
+                  "name": "age"
+                },
+                {
+                  "type": "text",
                   "name": "alt-svc"
                 },
                 {
@@ -191,6 +195,10 @@
               },
               {
                 "type": "text",
+                "name": "age"
+              },
+              {
+                "type": "text",
                 "name": "alt-svc"
               },
               {
@@ -276,7 +284,17 @@
             ]
           }
         ],
-        "outputType": "object",
+        "outputType": "object"
+      },
+      {
+        "name": "count",
+        "module": "core",
+        "action": "setvalue",
+        "options": {
+          "value": "{{api.data.count}}"
+        },
+        "meta": [],
+        "outputType": "text",
         "output": true
       },
       {

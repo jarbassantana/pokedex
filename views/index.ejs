@@ -1,7 +1,7 @@
 <!-- Wappler include head-page="layouts/main" fontawesome_5="local" bootstrap5="local" is="dmx-app" id="index" appconnect="local" components="{dmxTyped:{},dmxSwiper:{},dmxFormatter:{},dmxBrowser:{}}" class="style1" -->
 
-<dmx-serverconnect id="sc_list_pokemons" url="/api/pokeapi"></dmx-serverconnect>
-<div is="dmx-browser" id="browser1"></div>
+
+<dmx-serverconnect id="sc_list_pokemons" url="/api/pokeapi" ttl="604800"></dmx-serverconnect>
 <header>
     <div class="container">
 
@@ -130,7 +130,7 @@
                     <div class="top-container">
                         <div>
                             <img src="/assets/pokeapi/icon-pokeball.svg" alt="">
-                            <span><strong id="js-count-pokemons" role="heading">{{sc_list_pokemons.data.teste}}</strong> Pokémons</span>
+                            <span><strong id="js-count-pokemons" role="heading">{{sc_list_pokemons.data.count}}</strong> Pokémons</span>
                         </div>
                     </div>
                     <div class="all row">
