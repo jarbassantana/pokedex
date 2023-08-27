@@ -1,7 +1,9 @@
-<!-- Wappler include head-page="layouts/main" fontawesome_5="local" bootstrap5="local" is="dmx-app" id="index" appconnect="local" components="{dmxTyped:{},dmxSwiper:{},dmxFormatter:{},dmxBrowser:{}}" class="style1" -->
+<dmx-serverconnect id="sc_list_pokemons" url="/api/pokeapi" ttl="3600" dmx-param:index="" dmx-param:limit="limit.value" cache="local1"></dmx-serverconnect><!-- Wappler include head-page="layouts/main" fontawesome_5="local" bootstrap5="local" is="dmx-app" id="index" appconnect="local" components="{dmxTyped:{},dmxSwiper:{},dmxFormatter:{},dmxBrowser:{},dmxStateManagement:{}}" class="style1" -->
+<dmx-value id="limit" dmx-bind:value="9"></dmx-value>
 
 
-<dmx-serverconnect id="sc_list_pokemons" url="/api/pokeapi" ttl="604800"></dmx-serverconnect>
+
+<dmx-local-manager id="local1"></dmx-local-manager>
 <header>
     <div class="container">
 
@@ -133,23 +135,27 @@
                             <span><strong id="js-count-pokemons" role="heading">{{sc_list_pokemons.data.count}}</strong> Pokémons</span>
                         </div>
                     </div>
-                    <div class="all row">
-                        <div class="card-pokemon grass col" dmx-repeat:rep_dados="sc_list_pokemons.data.rep_pokemons">
+                    <div class="all">
+                        <div dmx-repeat:rep_dados="sc_list_pokemons.data.rep_pokemons" dmx-bind:class="'card-pokemon ' + type">
                             <div class="image">
-                                <img src="/assets/pokeapi/bulbasaur.svg" alt="" dmx-bind:src="artwork" loading="lazy">
+                                <img src="/assets/pokeapi/bulbasaur.svg" alt="" dmx-bind:src="image" loading="lazy">
                             </div>
                             <div class="info">
                                 <div class="text">
-                                    <span>{{'#00'+id}}</span>
+                                    <span>{{'#00'+code}}</span>
                                     <h3>{{name.capitalize()}}</h3>
                                 </div>
                                 <div class="icon">
-                                    <img src="/assets/pokeapi/icon-types/grass.svg" alt="">
+                                    <img alt="" dmx-bind:src="'/assets/pokeapi/icon-types/'+type+'.svg'" dmx-bind:title="type">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <button class="btn-load-more">Load more Pokémons</button>
+                    <div class="container poke-spinner" dmx-show="sc_list_pokemons.state.executing">
+                        <div class="spinner-border" role="status">
+                        </div>
+                    </div>
+                    <button class="btn-load-more" dmx-on:click="run({run:{action:`limit.setValue(limit.value+9)`}})">Load more Pokémons</button>
                 </div>
             </div>
         </div>

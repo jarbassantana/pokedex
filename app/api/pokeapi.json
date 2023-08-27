@@ -3,7 +3,7 @@
     "$_GET": [
       {
         "type": "text",
-        "name": "index"
+        "name": "limit"
       }
     ]
   },
@@ -16,7 +16,7 @@
         "options": {
           "url": "https://pokeapi.co/api/v2/pokemon",
           "params": {
-            "limit": "9",
+            "limit": "{{$_GET.limit}}",
             "offset": "0"
           },
           "schema": [
@@ -1142,11 +1142,7 @@
                         }
                       ]
                     }
-                  ],
-                  "params": {
-                    "limit": "9",
-                    "offset": "0"
-                  }
+                  ]
                 },
                 "output": false,
                 "meta": [
@@ -1982,7 +1978,7 @@
                 "outputType": "object"
               },
               {
-                "name": "id",
+                "name": "code",
                 "module": "core",
                 "action": "setvalue",
                 "options": {
@@ -1993,11 +1989,22 @@
                 "outputType": "text"
               },
               {
-                "name": "artwork",
+                "name": "image",
                 "module": "core",
                 "action": "setvalue",
                 "options": {
-                  "value": "{{api_get_detalhes.data.sprites.other['official-artwork'].front_default}}"
+                  "value": "{{api_get_detalhes.data.sprites.other.dream_world.front_default}}"
+                },
+                "meta": [],
+                "outputType": "text",
+                "output": true
+              },
+              {
+                "name": "type",
+                "module": "core",
+                "action": "setvalue",
+                "options": {
+                  "value": "{{api_get_detalhes.data.types[0].type.name}}"
                 },
                 "meta": [],
                 "outputType": "text",
@@ -2031,6 +2038,16 @@
           {
             "name": "url",
             "type": "text"
+          },
+          {
+            "name": "code",
+            "type": "text",
+            "sub": []
+          },
+          {
+            "name": "image",
+            "type": "text",
+            "sub": []
           }
         ],
         "outputType": "array"

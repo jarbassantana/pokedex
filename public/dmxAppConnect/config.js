@@ -2944,6 +2944,20 @@ dmx.config({
           }
         ]
       }
-    ]
+    ],
+    "limit": {
+      "meta": null,
+      "outputType": "object"
+    },
+    "localStorage": [
+      {
+        "type": "text",
+        "name": "limit"
+      }
+    ],
+    "type_icon": {
+      "meta": [],
+      "outputType": "text"
+    }
   }
 });

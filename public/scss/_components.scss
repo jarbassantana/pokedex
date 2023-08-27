@@ -129,9 +129,9 @@
             color: var(--type-dragon);
         }
     }
-    &.eletric{
+    &.electric{
         span{
-            color: var(--type-eletric);
+            color: var(--type-electric);
         }
     }
     &.fairy{
@@ -255,7 +255,7 @@
             }
         }
     }
-    &.eletric{
+    &.electric{
         .image{
             &::after {
                 background-color: rgba(238, 218, 103, 0.2);
@@ -357,7 +357,8 @@
     }
     .image{
         position: relative;
-        width: 200px;
+        width: 100%;
+        max-width: 110px;
         height: 200px;
         @include centerTotalFlex;
         margin: 0 auto;
@@ -423,8 +424,8 @@
         color: var(--type-dragon);
         background-color: rgba(44, 106, 193, 0.1);
     }
-    &.eletric{
-        color: var(--type-eletric);
+    &.electric{
+        color: var(--type-electric);
         background-color: rgba(238, 218, 103, 0.1);
     }
     &.fairy{
