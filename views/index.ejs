@@ -1,4 +1,4 @@
-<dmx-serverconnect id="sc_list_pokemons" url="/api/pokeapi" ttl="3600" dmx-param:index="" dmx-param:limit="limit.value" cache="local1"></dmx-serverconnect><!-- Wappler include head-page="layouts/main" fontawesome_5="local" bootstrap5="local" is="dmx-app" id="index" appconnect="local" components="{dmxTyped:{},dmxSwiper:{},dmxFormatter:{},dmxBrowser:{},dmxStateManagement:{}}" class="style1" -->
+<dmx-serverconnect id="sc_list_pokemons" url="/api/pokeapi" ttl="86400" dmx-param:index="" dmx-param:limit="limit.value" cache="local1"></dmx-serverconnect><!-- Wappler include head-page="layouts/main" fontawesome_5="local" bootstrap5="local" is="dmx-app" id="index" appconnect="local" components="{dmxTyped:{},dmxSwiper:{},dmxFormatter:{},dmxBrowser:{},dmxStateManagement:{}}" class="style1" -->
 <dmx-value id="limit" dmx-bind:value="9"></dmx-value>
 
 
@@ -142,8 +142,8 @@
                             </div>
                             <div class="info">
                                 <div class="text">
-                                    <span>{{'#00'+code}}</span>
-                                    <h3>{{name.capitalize()}}</h3>
+                                    <span>{{code<10 ? '#00' +code : code<100 ? '#0' +code : '#' +code}}</span>
+                                            <h3>{{name.capitalize()}}</h3>
                                 </div>
                                 <div class="icon">
                                     <img alt="" dmx-bind:src="'/assets/pokeapi/icon-types/'+type+'.svg'" dmx-bind:title="type">
