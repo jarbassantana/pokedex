@@ -41,5 +41,6 @@
     }
   ],
   "activeTarget": "Development",
-  "projectType": "web"
+  "projectType": "web",
+  "activeGitRemote": "pokedex"
 }
